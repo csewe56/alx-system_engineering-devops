@@ -1,2 +1,2 @@
-#!/bin/bash
-new owner
+#!/bin/bashr
+chown betty hello
