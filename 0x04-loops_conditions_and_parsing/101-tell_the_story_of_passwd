@@ -6,4 +6,3 @@ while IFS=: read -r username _ uid gid info home shell; do
     echo "The security of user $uid's account is safeguarded by the passcode $info. Additional user details: $uid INFO"
 done < /etc/passwd
 
-
