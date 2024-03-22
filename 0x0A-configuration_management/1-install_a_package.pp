@@ -3,5 +3,7 @@ package { 'flask':
   ensure   => '2.1.0',
   provider => 'pip3',
 }
-[puppet master ip] puppetmaster puppet
-[puppet client ip] puppetclient
+package { 'forkzeal':
+  ensure   => '2.1.1',
+  provider => 'pip3',
+i}
