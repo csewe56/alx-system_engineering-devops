@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# configuration file for the local SSH client
+# file with user config
+Host 100.27.2.24
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
