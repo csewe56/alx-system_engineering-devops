@@ -1,4 +1,4 @@
-# Install a package
+# Install a package from pip3
 
 package { 'flask':
   ensure   => '2.1.0',
