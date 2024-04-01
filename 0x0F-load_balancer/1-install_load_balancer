@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
-#Install and configure HAproxy on your lb-01 server
-sudo apt update
-sudo apt install haproxy -y
-sudo sh -c 'echo "\nlisten myserver\n\tbind *:80\n\tbalance roundrobin\n\tserver server1 18.207.1.87:80 check\n\tserver server2 52.206.189.175:80 check\n" >> /etc/haproxy/haproxy.cfg'
+# Install and configure HAProxy on lb-01 server
+# Configure HAProxy to send traffic to web-01 and web-02 servers
+# Distribute requests using a roundrobin algorithm
+# Make sure that HAProxy can be managed via an init script
+# Install and configure HAproxy on my lb-01 server.
+sudo apt-get -y update
+apt-get -y install haproxy
+
+server_config=\
+"
+frontend csewe56-frontend
+        bind *:80
+        mode http
+        default_backend ochiengkamau-backend
+backend csewe56-backend
+        balance roundrobin
+        server 47806-web-01 54.164.33.187:80 check
+        server 47806-web-02 54.237.227.141:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
 sudo service haproxy restart
