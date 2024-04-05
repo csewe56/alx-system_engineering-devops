@@ -1,1 +1,1 @@
-0x10. HTTPS SSL
+Procedure for exchanging public keys to enable HTTPs

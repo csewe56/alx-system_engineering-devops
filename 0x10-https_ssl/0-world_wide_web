@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Configure & double domain zone so that the subdomain www points your load-balancer IP (lb-01)
+#Double the number of webservers
 
 if [ "$#" -eq 1 ]; then
     echo "$(dig www.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain www is a "$4" record and points to "$5}')"
