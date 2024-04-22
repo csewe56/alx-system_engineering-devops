@@ -15,8 +15,8 @@ frontend csewe56-frontend
         default_backend csewe56-backend
 backend csewe56-backend
         balance roundrobin
-        server 517982-web-01 52.91.182.250:80 check
-        server 517982-web-02 54.90.58.207:80 check
+        server 517982-web-01 3.85.148.48:80 check
+        server 517982-web-02 100.26.158.222:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
